@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
 
     console.log(this.restaurantOffering);
     console.log(this.restaurantPaymentMethod);
-    console.log(this.restaurantSchedule)
+    console.log(this.restaurantSchedule);
   }
 
 }
