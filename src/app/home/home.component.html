@@ -18,20 +18,30 @@
 
         <!--Basic textarea-->
         <div class="md-form">
-          <textarea type="text" id="restaurantDescription" class="form-control md-textarea" rows="5" name="restaurantDescription" [(ngModel)]="restaurantDescription"></textarea>
+          <textarea type="text" id="restaurantDescription" class="form-control md-textarea" rows="5" name="restaurantDescription"
+            [(ngModel)]="restaurantDescription"></textarea>
           <label for="restaurantDescription">Descripción del Restaurante</label>
         </div>
 
-        <!-- Restaurant location input -->
+        <div align="center">
+          <button type="button" class="btn btn-color" (click)="findMe()">Registrar Localización del Restaurante</button>
+        </div>
+        <!-- Restaurant location altitude input -->
         <div class="md-form">
-          <input type="text" id="restaurantLocation" class="form-control">
-          <label for="restaurantLocation">Localización del Restaurante</label>
+          <input type="text" id="restaurantLocation" class="form-control" name="location.latitude" [(ngModel)]="location.latitude" disabled>
+          <label for="restaurantLocation">Latitud del Restaurante</label>
         </div>
 
+        <!-- Restaurant location longitude input -->
+        <div class="md-form">
+          <input type="text" id="restaurantLocation" class="form-control" name="location.longitude" [(ngModel)]="location.longitude" disabled>
+          <label for="restaurantLocation">Longitud del Restaurante</label>
+        </div>
 
         <!-- Restaurant phone input -->
         <div class="md-form">
-          <input type="text" id="restaurantPhone" class="form-control" placeholder="(xxx) xxx-xxxx" name="restaurantPhone" [(ngModel)]="restaurantPhone">
+          <input type="text" id="restaurantPhone" class="form-control" placeholder="(xxx) xxx-xxxx" name="restaurantPhone"
+            [(ngModel)]="restaurantPhone">
           <label for="restaurantPhone">Teléfono del Restaurante</label>
         </div>
 
@@ -42,7 +52,8 @@
               <div class="col-lg-3">
 
                 <div class="form-check mb-4">
-                  <input name="category" [(ngModel)]="restaurantCategory" type="radio" value="restaurantes" class="form-check-input with-gap" id="restaurantes">
+                  <input name="category" [(ngModel)]="restaurantCategory" type="radio" value="restaurantes" class="form-check-input with-gap"
+                    id="restaurantes">
                   <label class="form-check-label" for="restaurantes">D'Restaurantes</label>
                 </div>
 
@@ -50,7 +61,8 @@
               <div class="col-lg-3">
 
                 <div class="form-check mb-4">
-                  <input name="category" [(ngModel)]="restaurantCategory" type="radio" value="guaguita" class="form-check-input with-gap" id="guaguita">
+                  <input name="category" [(ngModel)]="restaurantCategory" type="radio" value="guaguita" class="form-check-input with-gap"
+                    id="guaguita">
                   <label class="form-check-label" for="guaguita">D'Guaguita</label>
                 </div>
               </div>
@@ -58,7 +70,8 @@
               <div class="col-lg-3">
 
                 <div class="form-check mb-4">
-                  <input name="category" [(ngModel)]="restaurantCategory" type="radio" value="picar" class="form-check-input with-gap" id="picar">
+                  <input name="category" [(ngModel)]="restaurantCategory" type="radio" value="picar" class="form-check-input with-gap"
+                    id="picar">
                   <label class="form-check-label" for="picar">D'Picar</label>
                 </div>
 
@@ -66,7 +79,8 @@
 
               <div class="col-lg-3">
                 <div class="form-check mb-4">
-                  <input name="category" [(ngModel)]="restaurantCategory" type="radio" value="antojos" class="form-check-input with-gap" id="antojos">
+                  <input name="category" [(ngModel)]="restaurantCategory" type="radio" value="antojos" class="form-check-input with-gap"
+                    id="antojos">
                   <label class="form-check-label" for="antojos">D'Antojos</label>
                 </div>
               </div>
@@ -84,8 +98,8 @@
               <div class="col-lg-4">
                 <!-- Estacionamiento -->
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" [checked]="restaurantOffering.parking"
-                   (change)="restaurantOffering.parking = !restaurantOffering.parking" id="parking">
+                  <input class="form-check-input" type="checkbox" [checked]="restaurantOffering.parking" (change)="restaurantOffering.parking = !restaurantOffering.parking"
+                    id="parking">
                   <label class="form-check-label" for="parking">
                     Estacionamiento
                   </label>
@@ -95,8 +109,8 @@
               <div class="col-lg-4">
                 <!-- Seguridad -->
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" [checked]="restaurantOffering.security"
-                  (change)="restaurantOffering.security = !restaurantOffering.security" id="security">
+                  <input class="form-check-input" type="checkbox" [checked]="restaurantOffering.security" (change)="restaurantOffering.security = !restaurantOffering.security"
+                    id="security">
                   <label class="form-check-label" for="security">
                     Seguridad
                   </label>
@@ -106,8 +120,8 @@
               <div class="col-lg-4">
                 <!-- Mascotas -->
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" [checked]="restaurantOffering.pets"
-                  (change)="restaurantOffering.pets = !restaurantOffering.pets" id="pets">
+                  <input class="form-check-input" type="checkbox" [checked]="restaurantOffering.pets" (change)="restaurantOffering.pets = !restaurantOffering.pets"
+                    id="pets">
                   <label class="form-check-label" for="pets">
                     Permiten Mascotas
                   </label>
@@ -120,8 +134,8 @@
               <div class="col-lg-4">
                 <!-- Drinks -->
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" [checked]="restaurantOffering.drinks"
-                  (change)="restaurantOffering.drinks = !restaurantOffering.drinks" id="drinks">
+                  <input class="form-check-input" type="checkbox" [checked]="restaurantOffering.drinks" (change)="restaurantOffering.drinks = !restaurantOffering.drinks"
+                    id="drinks">
                   <label class="form-check-label" for="drinks">
                     Bebidas Alcohólicas
                   </label>
@@ -131,8 +145,8 @@
               <div class="col-lg-4">
                 <!-- WIFI -->
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" [checked]="restaurantOffering.wifi" 
-                  (change)="restaurantOffering.wifi = !restaurantOffering.wifi" id="wifi">
+                  <input class="form-check-input" type="checkbox" [checked]="restaurantOffering.wifi" (change)="restaurantOffering.wifi = !restaurantOffering.wifi"
+                    id="wifi">
                   <label class="form-check-label" for="wifi">
                     WIFI
                   </label>
@@ -142,8 +156,8 @@
               <div class="col-lg-4">
                 <!-- Conección Electrica -->
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" [checked]="restaurantOffering.power"
-                  (change)="restaurantOffering.power = !restaurantOffering.power" id="power">
+                  <input class="form-check-input" type="checkbox" [checked]="restaurantOffering.power" (change)="restaurantOffering.power = !restaurantOffering.power"
+                    id="power">
                   <label class="form-check-label" for="power">
                     Conección Electrica
                   </label>
@@ -164,8 +178,8 @@
               <div class="col-lg-4">
                 <!-- Efectivo -->
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" [checked]="restaurantPaymentMethod.cash"
-                  (change)="restaurantPaymentMethod.cash = !restaurantPaymentMethod.cash" id="cash">
+                  <input class="form-check-input" type="checkbox" [checked]="restaurantPaymentMethod.cash" (change)="restaurantPaymentMethod.cash = !restaurantPaymentMethod.cash"
+                    id="cash">
                   <label class="form-check-label" for="cash">
                     Efectivo
                   </label>
@@ -175,8 +189,8 @@
               <div class="col-lg-4">
                 <!-- ATH -->
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" [checked]="restaurantPaymentMethod.ath"
-                  (change)="restaurantPaymentMethod.ath = !restaurantPaymentMethod.ath" id="ath">
+                  <input class="form-check-input" type="checkbox" [checked]="restaurantPaymentMethod.ath" (change)="restaurantPaymentMethod.ath = !restaurantPaymentMethod.ath"
+                    id="ath">
                   <label class="form-check-label" for="ath">
                     ATH
                   </label>
@@ -187,7 +201,7 @@
                 <!-- Tarjetas de Credito -->
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" [checked]="restaurantPaymentMethod.creditCard"
-                  (change)="restaurantPaymentMethod.creditCard = !restaurantPaymentMethod.creditCard" id="creditCard">
+                    (change)="restaurantPaymentMethod.creditCard = !restaurantPaymentMethod.creditCard" id="creditCard">
                   <label class="form-check-label" for="creditCard">
                     Tarjeta de Crédito
                   </label>
@@ -200,8 +214,8 @@
               <div class="col-lg-4">
                 <!-- ATH Móvil -->
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" [checked]="restaurantPaymentMethod.athMovil"
-                  (change)="restaurantPaymentMethod.athMovil = !restaurantPaymentMethod.athMovil" id="athMovil">
+                  <input class="form-check-input" type="checkbox" [checked]="restaurantPaymentMethod.athMovil" (change)="restaurantPaymentMethod.athMovil = !restaurantPaymentMethod.athMovil"
+                    id="athMovil">
                   <label class="form-check-label" for="athMovil">
                     ATH Móvil
                   </label>
@@ -211,8 +225,8 @@
               <div class="col-lg-4">
                 <!-- Paypal -->
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" [checked]="restaurantPaymentMethod.paypal"
-                  (change)="restaurantPaymentMethod.paypal = !restaurantPaymentMethod.paypal" id="paypal">
+                  <input class="form-check-input" type="checkbox" [checked]="restaurantPaymentMethod.paypal" (change)="restaurantPaymentMethod.paypal = !restaurantPaymentMethod.paypal"
+                    id="paypal">
                   <label class="form-check-label" for="paypal">
                     Paypal
                   </label>
@@ -222,8 +236,8 @@
               <div class="col-lg-4">
                 <!-- Stripe -->
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" [checked]="restaurantPaymentMethod.stripe"
-                  (change)="restaurantPaymentMethod.stripe = !restaurantPaymentMethod.stripe" id="stripe">
+                  <input class="form-check-input" type="checkbox" [checked]="restaurantPaymentMethod.stripe" (change)="restaurantPaymentMethod.stripe = !restaurantPaymentMethod.stripe"
+                    id="stripe">
                   <label class="form-check-label" for="stripe">
                     Stripe
                   </label>
