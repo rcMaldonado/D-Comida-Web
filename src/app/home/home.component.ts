@@ -101,7 +101,7 @@ export class HomeComponent implements OnInit {
   public onSubmit() {
     this.joinData();
 
-    console.log(this.restaurant);
+    this.restaurantService.sendRestaurants(this.restaurant);
   }
 
   public joinData() {
